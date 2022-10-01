@@ -7,19 +7,19 @@ import State;
 -- Evaluate the binary operation
 public fun evalBinop(op) {
   case op of
-      "+"  -> infix +
-    | "-"  -> infix -
-    | "*"  -> infix *
-    | "/"  -> infix /
-    | "%"  -> infix %
-    | "&&" -> infix &&
-    | "==" -> infix ==
-    | "!=" -> infix !=
-    | "<=" -> infix <=
-    | "<"  -> infix <
-    | ">=" -> infix >=
-    | ">"  -> infix >
-    | "!!" -> infix !!  
+    "+"  -> infix +
+  | "-"  -> infix -
+  | "*"  -> infix *
+  | "/"  -> infix /
+  | "%"  -> infix %
+  | "&&" -> infix &&
+  | "==" -> infix ==
+  | "!=" -> infix !=
+  | "<=" -> infix <=
+  | "<"  -> infix <
+  | ">=" -> infix >=
+  | ">"  -> infix >
+  | "!!" -> infix !!  
   esac
 }
 
@@ -34,8 +34,8 @@ public fun evalBinop(op) {
 
 public fun evalExpr (st, expr) {
   case expr of
-      Const (n) -> n
-    | Var   (x) -> st (x)
-    | Binop (op, x, y) -> evalBinop (op) (evalExpr (st, x), evalExpr (st, y))
+    Const (n) -> n
+  | Var   (x) -> st (x)
+  | Binop (op, x, y) -> evalBinop (op) (evalExpr (st, x), evalExpr (st, y))
   esac
 }
